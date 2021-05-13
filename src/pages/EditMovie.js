@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router';
 import Loading from '../components/Loading';
 
 import { MovieForm } from '../components';
@@ -22,7 +23,8 @@ class EditMovie extends Component {
   // Na função abaixo há um parâmetro chamado 'updatedMovie' colocar de volta!
 
   handleSubmit(updatedMovie) {
-    movieAPI.updateMovie(updatedMovie);
+    movieAPI.updateMovie(updatedMovie)
+      .then(() => this.setState({ shouldRedirect: true }));
   }
 
   handleMovie = () => {
@@ -34,6 +36,9 @@ class EditMovie extends Component {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
       // Redirect
+      return (
+        <Redirect to="/" />
+      );
     }
 
     if (status === 'loading') {
