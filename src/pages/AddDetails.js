@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class AddDetails extends Component {
   render() {
     const { movie } = this.props;
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
@@ -16,7 +16,7 @@ class AddDetails extends Component {
         <p>{ `Genre: ${genre}` }</p>
         <p>{ `Rating: ${rating}` }</p>
         <div>
-          <Link to="/movies/:id/edit">EDITAR</Link>
+          <Link to={ `/movies/${id}/edit` }>EDITAR</Link>
           <Link to="/">VOLTAR</Link>
         </div>
       </div>
