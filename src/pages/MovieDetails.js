@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router';
 import AddDetails from './AddDetails';
 
 import * as movieAPI from '../services/movieAPI';
@@ -11,11 +12,17 @@ class MovieDetails extends Component {
     this.state = {
       movies: [],
       loading: false,
+      isRequired: false,
     };
   }
 
   componentDidMount() {
     this.handleUpdateMovies();
+  }
+
+  handleDeleteMovie = () => {
+    const { match: { params: { id } } } = this.props;
+    movieAPI.deleteMovie(id).then(() => this.setState({ isRequired: true }));
   }
 
   handleUpdateMovies = () => {
@@ -31,11 +38,17 @@ class MovieDetails extends Component {
     // if (true) return <Loading />;
 
     // title da const abaixo
-    const { movies, loading } = this.state;
+    const { movies, loading, isRequired } = this.state;
+
+    if (isRequired === true) {
+      return <Redirect to="/" />;
+    }
 
     return (
       <div>
-        { loading === true ? <Loading /> : <AddDetails movie={ movies } /> }
+        { loading === true
+          ? <Loading />
+          : <AddDetails movie={ movies } handleDeleteMovie={ this.handleDeleteMovie } /> }
       </div>
     );
   }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class AddDetails extends Component {
   render() {
-    const { movie } = this.props;
+    const { movie, handleDeleteMovie } = this.props;
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
@@ -18,6 +18,7 @@ class AddDetails extends Component {
         <div>
           <Link to={ `/movies/${id}/edit` }>EDITAR</Link>
           <Link to="/">VOLTAR</Link>
+          <button type="button" onClick={ handleDeleteMovie }>DELETAR</button>
         </div>
       </div>
     );
@@ -33,6 +34,7 @@ AddDetails.propTypes = {
     imagePath: PropTypes.string,
     genre: PropTypes.string,
   })).isRequired,
+  handleDeleteMovie: PropTypes.func.isRequired,
 };
 
 export default AddDetails;
