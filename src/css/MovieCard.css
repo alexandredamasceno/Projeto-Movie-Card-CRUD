@@ -1,0 +1,40 @@
+.img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+.details-btn {
+  background-color: aqua;
+  border-radius: 10px;
+  box-shadow: 0 0 5px gray;
+  margin: 0 auto;
+  padding: 8px;
+  text-align: center;
+  width: 30%;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.details-btn:hover {
+  background-color: rgba(52, 152, 219, 1);
+  box-shadow: 0 0 10px gray;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 1px 10px black;
+  margin: 20px 10px;
+  padding-bottom: 15px;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px black;
+}
