@@ -16,8 +16,8 @@ class MovieCard extends Component {
           <p>{storyline}</p>
         </div>
         <span className="text">{rating}</span>
-        <div className="details-btn">
-          <Link className="link" to={ `/movies/${id}` }>VER DETALHES</Link>
+        <div className="link">
+          <Link className="btn btn-primary" to={ `/movies/${id}` }>VER DETALHES</Link>
         </div>
       </div>
     );

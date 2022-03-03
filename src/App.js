@@ -9,8 +9,8 @@ class App extends Component {
       <BrowserRouter>
         <header className="header">
           <h1 className="title">Movie Card Library CRUD</h1>
+          <Link class="btn btn-success" to="/movies/new">ADICIONAR CARTÃO</Link>
         </header>
-        <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         <Switch>
           <Route exact path="/" component={ MovieList } />
           <Route path="/movies/new" component={ NewMovie } />
