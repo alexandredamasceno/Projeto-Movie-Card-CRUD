@@ -1,6 +1,15 @@
 .img {
   border-radius: 10px 10px 0 0;
+  margin-bottom: 5px;
   width: 100%;
+}
+
+span {
+  background-color: rgb(5, 167, 5);
+  border-radius: 5px;
+  color: white;
+  max-width: 30px;
+  text-align: center;
 }
 
 .text {
@@ -27,11 +36,22 @@
 }
 
 .card {
+  background-size: 100px;
   border-radius: 10px;
-  box-shadow: 0 1px 10px black;
+  display: flex;
+  flex-direction: column;
   margin: 20px 10px;
+  max-height: 500px;
+  max-width: 350px;
   padding-bottom: 15px;
-  width: 30%;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .card:hover {
