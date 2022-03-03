@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <header className="header">
-          <h1 className="title">Movie Card Library CRUD</h1>
+          <Link to="/" className="title">
+            <h1 className="title">Movie Card Library CRUD</h1>
+          </Link>
           <Link class="btn btn-success" to="/movies/new">ADICIONAR CARTÃO</Link>
         </header>
         <Switch>
